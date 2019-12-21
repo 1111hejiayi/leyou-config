@@ -1,8 +1,5 @@
 server:
   port: 8083
-ribbon:  
-  ReadTimeout: 60000  
-  ConnectTimeout: 60000
 spring:
   application:
     name: search-service
@@ -36,17 +33,3 @@ eureka:
     ip-address: 127.0.0.1
     lease-expiration-duration-in-seconds: 10 #10秒不发送九过期
     lease-renewal-interval-in-seconds: 5 #每隔5秒发一次心跳
-feign:
-  hystrix:
-     enabled: true
-hystrix:
-  shareSecurityContext: true
-  command:
-    default:
-      circuitBreaker:
-        sleepWindowInMilliseconds: 100000
-        forceClosed: true
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 600000
